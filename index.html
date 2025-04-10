@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Functions in python</h1>
+
+    <h3>In Python, a **function** is a block of reusable code that performs a specific task. Functions help in breaking down a problem into smaller, manageable pieces and are key to writing modular, organized code.
+</h3>
+<div class="div">
+<h2>Defining a Function:</h2>
+
+<h4>A function in Python is defined using the `def` keyword followed by the function name, parentheses (which may include parameters), and a colon. The code block inside the function is indented.
+</h4>
+<li>Syntax:</li>
+<p>
+def function_name(parameters): <br>
+    # Code block <br>
+    # Return something if needed <br>
+</p>
+<p>
+def greet(): <br>
+    print("Hello, World!") <br> <br>
+To call or invoke the function, you simply use its name followed by parentheses: <br> <br>
+greet()  # Output: Hello, World!
+</p>
+
+<h2>Function with Parameters:</h2>
+
+<h4>Functions can take **parameters** (also known as **arguments**) that allow you to pass data into the function to work with. Parameters are specified within the parentheses during the function definition.
+</h4>
+<p>
+def greet(name): <br>
+    print(f"Hello, {name}!") <br> <br>
+
+Calling the function with an argument: <br> <br>
+
+greet("Alice")  # Output: Hello, Alice! <br> 
+greet("Bob")    # Output: Hello, Bob!
+</p>
+
+<h2>Function with Return Value:</h2>
+
+<li>A function can return a value using the `return` statement. This allows the function to output a result that can be used elsewhere in the program.
+</li>
+<p>
+def add(a, b): <br>
+    return a + b <br> <br>
+
+Calling the function and capturing the returned value: <br> <br>
+
+result = add(3, 4) <br>
+print(result)  # Output: 7
+</p>
+
+<h2>Default Parameters:</h2>
+
+<li>You can provide **default values** for parameters in case no argument is passed when calling the function. This helps to make parameters optional.
+</li>
+<p>
+def greet(name="Guest"): <br>
+    print(f"Hello, {name}!") <br> <br>
+Calling the function with and without an argument: <br> <br>
+
+greet("Alice")  # Output: Hello, Alice! <br>
+greet()         # Output: Hello, Guest!
+</p>
+
+<h2> Variable-Length Arguments (Arbitrary Arguments):</h2>
+
+<h4>Sometimes, you may not know how many arguments will be passed to the function. Python provides two ways to handle such cases:
+</h4>
+<li><b>`args`:</b> Used to pass a variable number of non-keyword arguments (positional arguments).</li>
+<li><b>`kwargs`</b>: Used to pass a variable number of keyword arguments (arguments passed by name).</li>
+
+<p>
+def print_numbers(*args): <br>
+    for num in args: <br>
+        print(num) <br>
+Calling the function: <br><br>
+print_numbers(1, 2, 3, 4, 5) <br><br>
+Output: <br>
+1
+2
+3
+4
+5
+</p>
+
+<p>
+def print_info(**kwargs): <br>
+    for key, value in kwargs.items(): <br>
+        print(f"{key}: {value}") <br>
+
+Calling the function: <br>
+print_info(name="Alice", age=25, city="New York") <br><br>
+Output: <br><br>
+name: Alice
+age: 25
+city: New York
+
+</p>
+
+<h2> Lambda Functions (Anonymous Functions):</h2>
+
+<li>In Python, you can also define small, one-line functions without a name using the `lambda` keyword. These are called **lambda functions** or **anonymous functions**.
+</li>
+<li>Syntax:</li>
+<p>
+lambda arguments: expression
+</p>
+
+<p>
+square = lambda x: x * x
+print(square(4))  # Output: 16
+</p>
+
+<li>Lambda functions are useful when you need a simple function for a short period of time, like for use with higher-order functions (e.g., `map()`, `filter()`).
+</li>
+
+<h2>Functions as First-Class Citizens:
+</h2>
+<li>In Python, functions are **first-class citizens**, meaning they can be passed around as arguments, returned from other functions, and assigned to variables.
+</li>
+<p>
+def apply_function(func, x): <br>
+    return func(x) <br> <br>
+
+result = apply_function(lambda x: x * 2, 5) <br>
+print(result)  # Output: 10
+</p>
+
+<h2>Recursion:</h2>
+
+<li>A function can call itself. This is known as **recursion**. Recursive functions must have a **base case** to stop the recursion, otherwise they would result in an infinite loop.
+</li>
+<p>
+def factorial(n): <br>
+    if n == 0:  # Base case <br>
+        return 1 <br>
+    else: <br>
+        return n * factorial(n - 1) <br>
+Calling the function: <br> <br>
+
+print(factorial(5))  # Output: 120
+</p>
+
+<h2>Summary:</h2>
+<li><b>Defining Functions:</b> Use the `def` keyword to define a function.</li>
+<li><b>Parameters:</b> Functions can accept parameters to process data.</li>
+<li><b>Return Values:</b> Functions can return values using the `return` keyword.</li>
+<li><b>Default Parameters:</b> You can set default values for function parameters.</li>
+<li><b>Variable-Length Arguments:</b> Use `*args` and `**kwargs` to handle a variable number of arguments.</li>
+<li><b>Lambda Functions:</b> Anonymous one-line functions created with the `lambda` keyword.</li>
+<li><b>Recursion:</b> A function that calls itself to solve problems.</li>
+</div>
+</body>
+</html>
